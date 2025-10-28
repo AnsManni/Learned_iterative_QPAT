@@ -1,6 +1,6 @@
 
 
-Codes to train solver for the "ideal" (multi-illuminatio) problem".
+Codes to train solver for the "ideal" (multi-illumination) problem".
 
 
 Use dataset of 1250 simulated samples from https://drive.google.com/drive/folders/1SJ9qIL6LVOvlLUOOA4RT9g7kxcGkPb_l?usp=sharing and unzip train_sets folder
