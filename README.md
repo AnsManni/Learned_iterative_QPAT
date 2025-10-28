@@ -25,9 +25,9 @@ To succesfully run the training scripts install following packages in Python env
     - time
 
 
-The ideal (multi-illuminatio) problem and related data set can be found from "Learned_QPAT_multi_illumination" folder
+The ideal (multi-illumination) problem and link to related data set can be found from "Learned_QPAT_multi_illumination" folder
 
-The digital twin problem and related data set can be fround from ... 
+The digital twin problem and link to related data set can be fround from ... 
 
 
 
