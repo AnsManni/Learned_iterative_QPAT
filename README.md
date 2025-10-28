@@ -8,7 +8,7 @@ The codes in this repository are used to train learned iterative model based sol
 
 The principal options for the training are:
 
-Greedy / end-to-end training 
+Greedy / end-to-end training / (single step) U-Net
 
 Gradient descent / Gauss-Newton / rank-1-update direction used as the information for the networks
 
