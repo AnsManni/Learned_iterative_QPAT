@@ -11,7 +11,7 @@ The codes in this repository are used to train learned iterative model based sol
 The light propagation model is implemented using finite element approximation of **diffuse approximation** (DA) 
 
 ### Ideal problem
-The ideal problem consists of a comprehensive amount of 1250 samples, with inclusions of randomly shaped and located ellipses. The used magnitude of optical values produce a highly diffusive region where the overall modeling error from using DA is negligible. This setup is ideal for comparing the convergence and reconstruction accuracy of the implemented methods. The photon fluence field of the samples was simulated using ValoMC software ().
+The ideal problem consists of a comprehensive amount of 1250 samples, with inclusions of randomly shaped and located ellipses. The used magnitude of optical values produce a highly diffusive region where the overall modeling error from using DA is negligible. This setup is ideal for comparing the convergence and reconstruction accuracy of the implemented methods. The photon fluence field of the samples was simulated using ValoMC software (https://inverselight.github.io/ValoMC/).
 
 
 
