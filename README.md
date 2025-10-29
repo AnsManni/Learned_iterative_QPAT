@@ -4,12 +4,14 @@ This repository includes codes and datasets used to compute numerical examples f
 learned iterative methods," Journal of...
 
 
+## Overview 
 The codes in this repository are used to train learned iterative model based solvers to solve two different optical problems of QPAT.
 
 The principal options for the training are: <br />
 Greedy / end-to-end training / (single step) U-Net <br />
 Gradient descent / Gauss-Newton / rank-1-update direction used as the information for the networks
 
+## How to setup
 To succesfully run the training scripts follow these steps:
 
 1.) Setup python environment <br />
