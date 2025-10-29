@@ -3,7 +3,14 @@
 This repository includes codes and datasets used to compute numerical examples for the paper: Anssi Manninen, Janek Grohl, Felix Lucka, and Andreas Hauptmann "Towards robust quantitative photoacoustic tomography via
 learned iterative methods," (Submitted)
 
+## Authors
+Anssi Manninen, Research Unit of Mathematical Sciences, University of Oulu, Oulu, Finland <br />
+Janek Grohl, Research Unit of Mathematical Sciences, University of Oulu, Oulu, Finland<br />
+Felix Lucka, <br />
+Andreas Hauptmann, in Research Unit of Mathematical Sciences, University of Oulu, Oulu, Finland <br />
 
+
+## Summary of the work
 
 
 ## Overview of the codes
