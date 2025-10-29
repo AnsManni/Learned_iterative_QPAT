@@ -17,13 +17,13 @@ The ideal problem consists of a comprehensive amount of 1250 samples, with inclu
 
 ### Digital twin problem
 
-### Implemented solvers
+### Implemented solvers 
 
-**Learned iterative model-based solvers**
+**Learned iterative model-based solvers** <br />
 Greedy / end-to-end training 
-Gradient descent / Gauss-Newton / rank-1-update direction used as the information for the networks
+Gradient descent / Gauss-Newton / rank-1-update direction used as the information for the networks <br />
 
-**U-Net**
+**U-Net** <br />
 (single step) U-Net <br />
 
 ### Extendability of the codes ### 
