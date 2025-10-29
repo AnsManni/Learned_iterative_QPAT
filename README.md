@@ -18,7 +18,7 @@ To succesfully run the training scripts follow these steps:
 
 2.) install following packages in Python enviroment: <br />
 
-'pip install ...':
+'pip install ...':  <br />
     - matplotlib <br />
     - numpy <br />
     - scipy <br />
