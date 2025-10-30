@@ -17,9 +17,7 @@ Andreas Hauptmann<sup>1,4</sup>  <br />
 ## Summary of the work
 Photoacoustic tomography (PAT) is a medical imaging modality that can provide high-resolution tissue images based on the optical absorption. Classical reconstruction methods for quantifying the absorption coefficients rely on sufficient prior information to overcome noisy and imperfect measurements. As these methods utilize computationally expensive forward models, the computation becomes slow, limiting their potential for time-critical applications. As an alternative approach, deep learning-based reconstruction methods have been established for faster and more accurate reconstructions. However, most of these methods rely on having a large amount of training data, which is not the case in practice. In this work, we adopted the model-based learned iterative approach for the use in Quantitative PAT (QPAT), in which additional information from the model is iteratively provided to the updating networks, allowing better generalizability with scarce training data. 
 
-The codes provided in this repository implement iterative learned model-based updates based on **gradient descent**, **Gauss-Newton**, and **rank-1-update** methods that can be used to solve **ideal problem** and **digital twin problem** described below. Additionally, the learning task can be selected to be formulated as **greedy** or **end-to-end** (see [Implemented solvers](#Implemented-solvers)). For comparison learned single-step reconstruction method is implemented based on **U-Net** architecture is implemented. 
-
-
+The codes provided in this repository implement iterative learned model-based updates based on **gradient descent**, **Gauss-Newton**, and **rank-1-update** methods that can be used to solve **ideal problem** and **digital twin problem** described below. The learning task can be selected to be formulated as **greedy** or **end-to-end**. For comparison learned single-step reconstruction method based on **U-Net** architecture is implemented. See [Implemented solvers](#Implemented-solvers) for details of the implementations.
 
 
 ### Ideal problem
