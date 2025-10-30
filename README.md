@@ -17,19 +17,21 @@ Andreas Hauptmann<sup>1,4</sup>  <br />
 ## Summary of the work
 Photoacoustic tomography (PAT) is a medical imaging modality that can provide high-resolution tissue images based on the optical absorption. Classical reconstruction methods for quantifying the absorption coefficients rely on sufficient prior information to overcome noisy and imperfect measurements. As these methods utilize computationally expensive forward models, the computation becomes slow, limiting their potential for time-critical applications. As an alternative approach, deep learning-based reconstruction methods have been established for faster and more accurate reconstructions. However, most of these methods rely on having a large amount of training data, which is not the case in practice. In this work, we adopted the model-based learned iterative approach for the use in Quantitative PAT (QPAT), in which additional information from the model is iteratively provided to the updating networks, allowing better generalizability with scarce training data. 
 
-The codes provided in this repository implement iterative learned model-based updates based on **gradient descent**, **Gauss-Newton**, and **rank-1-update** methods that can be used to solve **ideal problem** and **digital twin problem** described below. The learning task can be selected to be formulated as **greedy** or **end-to-end**. For comparison learned single-step reconstruction method based on **U-Net** architecture is implemented. See [Implemented solvers](#Implemented-solvers) for details of the implementations.
+The codes provided in this repository implement iterative learned model-based updates based on **gradient descent**, **Gauss-Newton**, and **rank-1-update** methods that can be used to solve two (2D) optical problems of QPAT, the **ideal problem** and the **digital twin problem** described below. The learning task can be selected to be formulated as **greedy** or **end-to-end**. For comparison learned single-step reconstruction method based on **U-Net** architecture is implemented. To solve the optical problem, the light propagation is modeled by using finite element approximation of **diffuse approximation** (DA). See [Implemented solvers](#Implemented-solvers) for details of the implementations.
 
 
 ### Ideal problem
 The ideal problem consists of a comprehensive amount of 1250 samples, with inclusions of randomly shaped and located ellipses. The used magnitude of optical values produce a highly diffusive region where the overall modeling error from using DA is negligible. This setup is ideal for comparing the convergence and reconstruction accuracy of the implemented methods. The photon fluence field of the samples was simulated using ValoMC software (https://inverselight.github.io/ValoMC/).
 
 ### Digital twin problem
-
+The digital twin problem is much closer to experimental conditions compared to the ideal problem. The problem now has limited training data, samples with varying locations of the tubes (region of interest), a large range of possible optical values, and a large modeling error. The digital twin problem re-used data from physical tissue-mimicking phantoms with piecewise-constant material distributions cite{}
 
 
 ## Overview of the codes
 The codes in this repository are used to train learned iterative model based solvers or (single step) U-Net to solve two different optical problems of QPAT.
 The light propagation model is implemented using finite element approximation of **diffuse approximation** (DA) 
+
+
 
 ### Implemented solvers 
 
@@ -40,8 +42,11 @@ Gradient descent / Gauss-Newton / rank-1-update direction used as the informatio
 **U-Net** <br />
 (single step) U-Net <br />
 
-### Extendability of the codes ### 
-
+### Extendability of the codes 
+The current implementation of the solvers does have some limitations:
+- The (2D) finite element mesh needs to be 2D evenly spaced rectangular shaped
+- 
+does not support using arbitary finite element meshes 
 
 
 
