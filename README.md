@@ -10,8 +10,8 @@ Andreas Hauptmann<sup>1,4</sup>  <br />
 
 ## Affiliations 
 1. Research Unit of Mathematical Sciences, University of Oulu, Oulu, Finland <br />
-2. ENI-G, a Joint Initiative of the University Medical Center Göttingen and the Max Planck Institute for Multidisciplinary Sciences <br />
-3. Centrum Wiskunde \& Informatica <br />
+2. ENI-G, a Joint Initiative of the University Medical Center Göttingen and the Max Planck Institute for Multidisciplinary Sciences, Göttingen, Germany <br />
+3. Centrum Wiskunde \& Informatica, Amsterdam, The Netherlands <br />
 4. Department of Computer Science, University College London, London, United Kingdom <br />
 
 ## Summary of the work
