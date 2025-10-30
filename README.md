@@ -5,9 +5,9 @@ learned iterative methods," (Submitted)
 
 ## Authors
 Anssi Manninen, Research Unit of Mathematical Sciences, University of Oulu, Oulu, Finland <br />
-Janek Grohl, Research Unit of Mathematical Sciences, University of Oulu, Oulu, Finland<br />
+Janek Grohl, <br />
 Felix Lucka, <br />
-Andreas Hauptmann, in Research Unit of Mathematical Sciences, University of Oulu, Oulu, Finland <br />
+Andreas Hauptmann, Research Unit of Mathematical Sciences, University of Oulu, Oulu, Finland <br />
 
 
 ## Summary of the work
