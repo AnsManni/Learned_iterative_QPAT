@@ -1,14 +1,12 @@
 # Learned iterative model based QPAT solvers (+UNET)
 
-This repository includes codes and datasets used to compute numerical examples for the paper: Anssi Manninen, Janek Grohl, Felix Lucka, and Andreas Hauptmann "Towards robust quantitative photoacoustic tomography via
-learned iterative methods," (Submitted)
+This repository includes codes and datasets used to compute numerical examples for the paper: Anssi Manninen, Janek Grohl, Felix Lucka, and Andreas Hauptmann "Towards robust quantitative photoacoustic tomography via learned iterative methods," **(Submitted)**
 
 ## Authors
 Anssi Manninen, Research Unit of Mathematical Sciences, University of Oulu, Oulu, Finland <br />
-Janek Grohl, <br />
-Felix Lucka, <br />
+Janek Grohl, ENI-G, a Joint Initiative of the University Medical Center Göttingen and the Max Planck Institute for Multidisciplinary Sciences <br />
+Felix Lucka, Centrum Wiskunde \& Informatica <br />
 Andreas Hauptmann, Research Unit of Mathematical Sciences, University of Oulu, Oulu, Finland <br />
-
 
 ## Summary of the work
 
@@ -41,11 +39,11 @@ Gradient descent / Gauss-Newton / rank-1-update direction used as the informatio
 ## How to setup
 To succesfully run the training scripts follow these steps:
 
-1.) Setup python environment <br />
+**1.) Setup python environment** <br />
     - Either via Anaconda <br />
     - In terminal via 'conda create'
 
-2.) install following packages in Python enviroment: <br />
+**2.) install following packages in Python enviroment:** <br />
 
 'pip install ...':  <br />
     - matplotlib <br />
@@ -57,7 +55,7 @@ To succesfully run the training scripts follow these steps:
     - os <br />
     - time <br />
 
-3.) Choose either <br />
+**3.) Choose either** <br />
 Ideal problem (see README in Learned_QPAT_multi_illumination folder) <br />
 or <br />
 digital twin problem (see README in Learned_QPAT_multi_frequency folder) 
