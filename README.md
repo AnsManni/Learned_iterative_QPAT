@@ -21,19 +21,27 @@ The codes provided in this repository implement iterative learned model-based up
 
 
 ### Ideal problem
-The ideal problem consists of a comprehensive amount of 1250 samples, with inclusions of randomly shaped and located ellipses. The used magnitude of optical values produce a highly diffusive region where the overall modeling error from using DA is negligible. This setup is ideal for comparing the convergence and reconstruction accuracy of the implemented methods. The photon fluence field of the samples was simulated using ValoMC software (https://inverselight.github.io/ValoMC/).
+The ideal problem consists of a comprehensive amount of 1250 samples, with inclusions of randomly shaped and located ellipses. These generated samples with ellipses can be interpreted to mimic, for instance, a cross-section of veins.  The used magnitude of optical values produce a highly diffusive region where the overall modeling error from using DA is negligible. This setup is ideal for comparing the convergence and reconstruction accuracy of the implemented methods. The photon fluence field of the samples was simulated using ValoMC (https://inverselight.github.io/ValoMC/) open Monte Carlo software package for Matlab.
+
 
 ### Digital twin problem
 The digital twin problem is much closer to experimental conditions compared to the ideal problem. The problem now has limited training data, samples with varying locations of the tubes (region of interest), a large range of possible optical values, and a large modeling error. The digital twin problem re-used data from physical tissue-mimicking phantoms with piecewise-constant material distributions cite{}
 
+The total number of actual digital twin samples for training was only 14. As such, we supplemented the digital twins with additional phantom simulations, where the optical properties are not in correspondence with physical phantoms but instead a random mix of the existing physical phantoms. Each phantom was drawn to have between 1 and 3 inclusions and a radius of 14.2\,mm. We simulated at six wavelengths: 700, 740, 780, 820, 860, and 900\,nm. In total, we supplemented the training data with 41 of these phantom simulations.
+
+The digital twin problem introduces several sources of modeling error. Firstly, the simulations were conducted in 3D, but we approximated the light propagation in 2D, where the photons need to travel a much shorter path to reach the center. Secondly, the optical values of the samples contained relatively high absorption coefficients, violating assumptions of the DA, hence causing it to be inaccurate.
+
 
 ## Overview of the codes
 The codes in this repository are used to train learned iterative model based solvers or (single step) U-Net to solve two different optical problems of QPAT.
-The light propagation model is implemented using finite element approximation of **diffuse approximation** (DA) 
+The light propagation model is implemented using finite element approximation of **diffuse approximation** (DA). Computing the light fluence from the DA, solving the selected step direction and training the networks are all implemented using PyTorch library allowing use of GPU operations.
+
+### Finite element approximation of diffuse approximation
 
 
 
-### Implemented solvers 
+
+### Solvers 
 
 **Learned iterative model-based solvers** <br />
 Greedy / end-to-end training 
@@ -41,6 +49,11 @@ Gradient descent / Gauss-Newton / rank-1-update direction used as the informatio
 
 **U-Net** <br />
 (single step) U-Net <br />
+
+
+
+**Changeable parameters**
+
 
 ### Extendability of the codes 
 The current implementation of the solvers does have some limitations:
