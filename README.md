@@ -1,12 +1,18 @@
 # Learned iterative model based QPAT solvers (+UNET)
 
-This repository includes codes and datasets used to compute numerical examples for the paper: Anssi Manninen, Janek Grohl, Felix Lucka, and Andreas Hauptmann "Towards robust quantitative photoacoustic tomography via learned iterative methods," **(Submitted)**
+This repository includes codes and datasets used to compute numerical examples for the paper: *"Towards robust quantitative photoacoustic tomography via learned iterative methods"* **(Submitted)**
 
 ## Authors
-Anssi Manninen, Research Unit of Mathematical Sciences, University of Oulu, Oulu, Finland <br />
-Janek Grohl, ENI-G, a Joint Initiative of the University Medical Center Göttingen and the Max Planck Institute for Multidisciplinary Sciences <br />
-Felix Lucka, Centrum Wiskunde \& Informatica <br />
-Andreas Hauptmann, Research Unit of Mathematical Sciences, University of Oulu, Oulu, Finland <br />
+Anssi Manninen<sup>1</sup>  <br />
+Janek Grohl<sup>2</sup> <br />
+Felix Lucka<sup>3</sup>  <br />
+Andreas Hauptmann<sup>1,4</sup>  <br />
+
+## Affiliations 
+1. Research Unit of Mathematical Sciences, University of Oulu, Oulu, Finland <br />
+2. ENI-G, a Joint Initiative of the University Medical Center Göttingen and the Max Planck Institute for Multidisciplinary Sciences <br />
+3. Centrum Wiskunde \& Informatica <br />
+4. Department of Computer Science, University College London, London, United Kingdom <br />
 
 ## Summary of the work
 
