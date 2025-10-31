@@ -102,7 +102,7 @@ To succesfully run the training scripts follow these steps:
 **3.) Choose either** <br />
 Ideal problem (see README in `/Learned_QPAT_multi_illumination`) <br />
 or <br />
-digital twin problem (see README in `/Learned_QPAT_multi_frequency`) 
+Digital twin problem (see README in `/Learned_QPAT_multi_frequency`) 
 
 
 
@@ -118,15 +118,17 @@ However, we are happy to help extending the usage of the codes. For queries on p
 
 ### Input formats:
 
-**Geometry file** (/geom_files/ and /geom_files/)
-Basic form the the geometric file contains fields (only the suggested datatypes have verified to work):
+**Geometry file** <br />
+Basic form the the geometric file contains fields (suggested datatypes that have verified to work):
 - 'xsize',     number of vertical nodes                              (uint8)
 - 'ysize',      number of horizontal nodes                            (uint8)
 - 'n',          number of total nodes                                 (int32)    
-- 'qvec',       $(n*I \times 1)$ vector describing the illumination intensity each node receives (i.e., for boundary illumination only the (boundary) node indices that are illuminated are non zero. Repeated for each illumination $I$.  (double)
-- 'elem',   () describing element indices of each element  
-- 'bound_nodes',
-- 'coords',
+- 'coords', $(n \times 2)$ vector containing the exact coordinates (in mm) of each node. (float64)
+- 'elem',   $(E \times 3)$ vector providing indices of nodes for each triangular element. $E$ is the total number of elements.  (uint16)
+- 'bound_nodes', $(B \times 1)$ vector containing indices of all boundary nodes. $B$ is total number of boundary nodes (uint16)
+- 'qvec',       $(nI \times 1)$ vector describing the illumination intensity each node receives (i.e., for boundary illumination only the (boundary) node indices that are illuminated are non zero. Repeated for each illumination $I$.  (float64)
+
+ Find the exemplar geom files from `/Learned_QPAT_multi_illumination/geom_files/` and `/Learned_QPAT_multi_frequency/geom_files/`.
 
 
 
