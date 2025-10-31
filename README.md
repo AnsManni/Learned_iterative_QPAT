@@ -27,9 +27,11 @@ The photon fluence field of the samples was simulated using ValoMC (https://inve
 
 
 ### Digital twin problem
-The digital twin problem is much closer to experimental conditions compared to the ideal problem. The problem now has limited training data, samples with varying locations of the tubes (region of interest), a large range of possible optical values, and a large modeling error. The digital twin problem re-used data from physical tissue-mimicking phantoms with piecewise-constant material distributions cite{}
+The digital twin problem is much closer to experimental conditions compared to the ideal problem. In this setup the phantoms were immersed in a water bath that was illuminated by 5 sources 
 
-The total number of actual digital twin samples for training and testing was only 14. As such, we supplemented the digital twins with additional phantom simulations, where the optical properties are not in correspondence with physical phantoms but instead a random mix of the existing physical phantoms. Each phantom was drawn to have between 1 and 3 inclusions and a radius of 14.2\,mm. We simulated at six wavelengths: 700, 740, 780, 820, 860, and 900 (nm). In total, we supplemented the training data with 41 of these phantom simulations. As the photon fluence was approximately symmetrical the sample set was augmented by vertically flipping each sample doubling number of samples. 
+The problem now has limited training data, samples with varying locations of the tubes (region of interest), a large range of possible optical values, and a large modeling error. The digital twin problem re-used data from physical tissue-mimicking phantoms with piecewise-constant material distributions cite{}
+
+The total number of actual digital twin samples for training and testing was only 14. As such, we supplemented the digital twins with additional phantom simulations, where the optical properties are not in correspondence with physical phantoms but instead a random mix of the existing physical phantoms. Each phantom was drawn to have between 1 and 3 inclusions and a radius of 14.2\,mm. We simulated at six wavelengths: 700, 740, 780, 820, 860, and 900 (nm). In total, we supplemented the training data with 41 of these phantom simulations. As the photon fluence was approximately symmetrical the sample set was augmented by vertically flipping each sample doubling number of samples. The fluence simulations were done by using MCX software.
 
 The digital twin problem introduces several sources of modeling error. Firstly, the simulations were conducted in 3D, but we approximated the light propagation in 2D, where the photons need to travel a much shorter path to reach the center. Secondly, the optical values of the samples contained relatively high absorption coefficients, violating assumptions of the DA, hence causing it to be inaccurate.
 
@@ -38,7 +40,10 @@ The codes in this repository are used to train learned iterative model based sol
 The light propagation model is implemented using 2D finite element approximation of **diffusion approximation** (DA). Computing the light fluence from the DA, solving the selected step direction and training the networks are all implemented using PyTorch library allowing use of GPU computation. The used PyTorch functions support [automatic differentiation](https://docs.pytorch.org/tutorials/beginner/basics/autogradqs_tutorial.html) meaning that there's no need to explicitly write the gradients of each operation with respect to the network parameters.
 
 ### Finite element approximation of diffusion approximation
-The implemented diffusion approximation considers a uniform discretization of the domain with $P$ non-overlapping triangular elements and $N$ grid coordinates. The optical parameters are represent in this discretization with piece-wise continuous basis functions. For the **ideal problem** the light source is implemented to uniformly illuminate the top or right boundary elements of the rectangular domain. For the 
+The implemented diffusion approximation considers a discretization of the domain with $P$ non-overlapping triangular elements and $N$ grid coordinates. The optical parameters are represent in this discretization with piece-wise continuous basis functions. For detailed representation of the finite element matrices see e.g., cite(X). 
+
+For the **ideal problem** the light source is implemented to uniformly illuminate the top or right boundary elements of the rectangular domain. For the 
+**digital twin problem** five 6.12\, mm wide light sources were approximated to have a Gaussian intensity profile with a standard deviation of 3.  
 
 ### Solvers 
 
