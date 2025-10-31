@@ -108,10 +108,10 @@ Digital twin problem (see README in `/Learned_QPAT_multi_frequency`)
 
 
 ## Extendability of the codes 
-The codes are not extensively tested with different measurement geometry inputs and hence can fail to properly work with different geometry files.  <br />
+The codes are not extensively tested with different measurement geometry inputs and can fail to work with different geometry configurations.  
 However, we are happy to help extending the usage of the codes. For queries on possible problems or suggestions for extensions contact anssi.manninen@oulu.fi
 
-**The current implementation of the solvers does have some limitations:**
+**Limitations of the implementation:**
 - As in this work we use convolutional networks and not graph convolutional networks, the (2D) finite element mesh is assumed to be 2D evenly spaced rectangular
 -
 
