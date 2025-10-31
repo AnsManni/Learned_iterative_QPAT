@@ -83,7 +83,8 @@ The input for the U-Net is the data, absorbed energy density, from which it dire
 To succesfully run the training scripts follow these steps:
 
 **1.) Setup python environment** <br />
-    - Either via Anaconda <br />
+    - via Anaconda <br />
+    or <br />
     - In terminal via 'conda create'
 
 **2.) install following packages in Python enviroment:** <br />
@@ -99,9 +100,9 @@ To succesfully run the training scripts follow these steps:
     - time <br />
 
 **3.) Choose either** <br />
-Ideal problem (see README in `/Learned_QPAT_multi_illumination` folder) <br />
+Ideal problem (see README in `/Learned_QPAT_multi_illumination`) <br />
 or <br />
-digital twin problem (see README in /Learned_QPAT_multi_frequency folder) 
+digital twin problem (see README in `/Learned_QPAT_multi_frequency`) 
 
 
 
