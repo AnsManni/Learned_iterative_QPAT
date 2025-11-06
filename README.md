@@ -1,6 +1,6 @@
 # Learned iterative model based QPAT solvers (+UNET)
 
-This repository includes codes and datasets used to compute numerical examples for the paper: *"Towards robust quantitative photoacoustic tomography via learned iterative methods"* **(Submitted)**
+This repository includes codes and datasets used to compute numerical examples for the paper: *"Towards robust quantitative photoacoustic tomography via learned iterative methods"* [arXiv:2510.27487](https://arxiv.org/abs/2510.27487)
 
 ## Authors
 Anssi Manninen<sup>1</sup>  <br />
@@ -26,7 +26,7 @@ The **Python** codes provided in this repository implement iterative learned mod
 
 The ideal problem consists of a comprehensive amount of 1250 samples, with inclusions of randomly shaped and located ellipses as shown above. These generated samples with ellipses can be interpreted to mimic, for instance, a cross-section of veins. The used magnitude of optical values produce a highly diffusive region where the overall modeling error from using DA is negligible. This setup is ideal for comparing the convergence and reconstruction accuracy of the implemented methods. 
 
-The photon fluence field of the samples was simulated using **ValoMC** (https://inverselight.github.io/ValoMC/) open Monte Carlo software package for **Matlab**. Two separate simulations were performed for each sample. First by illuminating the domain from the top side of the rectangular domain and secondly from the right side.
+The photon fluence field of the samples was simulated using [ValoMC](https://inverselight.github.io/ValoMC/) open Monte Carlo software package for **Matlab**. Two separate simulations were performed for each sample. First by illuminating the domain from the top side of the rectangular domain and secondly from the right side.
 
 
 ### Digital twin problem
