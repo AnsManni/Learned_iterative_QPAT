@@ -67,11 +67,11 @@ Note: To computed the Gauss-Newton direction robustly for the non-linear ill-pos
 
 The training task for the $K$ updating networks can be formulated as:
 - **Greedy**:The $K$ number of networks are trained via $K$ separate training task
-  - Pros: lower memory requirement and faster training as photon fluence and gradient information are computed outside of the training
-  - Cons: might lead to less optimal network weights
+  - Lower memory requirement and faster training as photon fluence and gradient information are computed outside of the training
+  - Might lead to less optimal network weights
 - **End-to-end**: The $K$ number of networks are trained jointly via single learning task
-  - Pros: in theory the greedy scheme provides an upper bound on the minimized loss function for end-to-end networks
-  - Cons: high memory and run time requirements due to photon fluence and gradients being computed for each training iteration
+  - In theory the greedy scheme provides an upper bound on the minimized loss function for end-to-end networks
+  - High memory consumption and run time due to photon fluence and gradients being computed $K$ times for each training iteration
 
 
 **U-Net** <br />
