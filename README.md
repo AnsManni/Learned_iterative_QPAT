@@ -66,7 +66,7 @@ The codes implement three options for the gradient information:
 Note: To computed the Gauss-Newton direction robustly for the non-linear ill-posed optical problem, a white-noise prior is applied.
 
 The training task for the $K$ updating networks can be formulated as:
-- **Greedy**:The $K$ number of networks are trained via $K$ separate training task
+- **Greedy**: The $K$ number of networks are trained via $K$ separate training task
   - Lower memory requirement and faster training as photon fluence and gradient information are computed outside of the training
   - Might lead to less optimal network weights
 - **End-to-end**: The $K$ number of networks are trained jointly via single learning task
@@ -109,10 +109,10 @@ Digital twin problem (see README in `/Learned_QPAT_multi_frequency`)
 
 ## Extendability of the codes 
 The codes are not extensively tested with different measurement geometry inputs and can fail to work with different geometry configurations.  
-However, we are happy to help extending the usage of the codes. For queries on possible problems or suggestions for extensions contact anssi.manninen@oulu.fi
+However, we are happy to help extending the usage of the codes for further use. For queries on possible problems or suggestions for extensions contact anssi.manninen@oulu.fi
 
 **Limitations of the implementation:**
-- As in this work we use convolutional networks and not graph convolutional networks, the (2D) finite element mesh is assumed to be 2D evenly spaced rectangular
+- As in this work we use convolutional networks and not graph convolutional networks, the input for the networks are assumed to be evenly spaced rectangles
 -
 
 
@@ -126,12 +126,13 @@ Basic (.pkl file) form of the geometric file that can be directly used contains 
 - 'elem',   $(E \times 3)$ vector providing indices of nodes for each triangular element. $E$ is the total number of elements.  (int)
 - 'bound_nodes', $(B \times 2)$ vector containing indices of boundary nodes for each boundary element (total of $B$) (NumPy int array)
 - 'qvec',       $(nI \times w)$ vector describing the illumination intensity each node receives (i.e., for boundary illumination only the (boundary) node indices that are illuminated are non zero. Repeated for each illumination $I$.  (NumPy array)
+- 'cropped_indices' vector containing the nodes that are in the FE mesh if not using full rectangle (only for multi wavelength problem).
 
  Find the exemplar geom files from `/Learned_QPAT_multi_illumination/geom_files/` and `/Learned_QPAT_multi_frequency/geom_files/`. 
  
 **Data file (Absorbed energy density)** <br />
 Multi illumination: $(S \times nI)$ vector where $S$ is the number of samples and $I$ number of illuminations. <br />
-Multi wavelenght:  $(S \times nI)$ vector where $S$ is the number of samples and $I$ number of illuminations. <br />
+Multi wavelenght:  $(S \times F \times n)$ vector where $S$ is the number of samples and $F$ number of frequencies used. <br />
 
 **Optical coefficients** <br />
 Multi illumination: $(S \times 2 \times n)$ vector where $S$ is the number of samples. 
