@@ -138,6 +138,6 @@ Multi frequency:  $(S \times F \times n)$ vector where $S$ is the number of samp
 Multi illumination: $(S \times 2 \times n)$ vector where $S$ is the number of samples. The second dimension contains, [0] absorption and [1] reduced scattering. 
 
 Multi frequency: $(5 \times S \times F \times n)$ vector where $S$ is the number of samples and $F$ number of used frequencies. <br />
-The first index has now 5 indices containing, [0] absorption, [1] reduced scattering, [2] segmentation indicating non-water nodes, [3] initial absorption, [4] initial reduced scattering.
+The first index has now 5 indices containing, [0] absorption, [1] reduced scattering, [2] segmentation indicating non-water nodes (0=water), [3] initial absorption, [4] initial reduced scattering.
  
 
