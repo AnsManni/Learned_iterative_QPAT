@@ -119,19 +119,26 @@ However, we are happy to help extending the usage of the codes. For queries on p
 ### Input formats:
 
 **Geometry file** <br />
-Basic form the the geometric file contains fields (suggested datatypes that have verified to work):
-- 'xsize',     number of vertical nodes                              (uint8)
-- 'ysize',      number of horizontal nodes                            (uint8)
-- 'n',          number of total nodes                                 (int32)    
-- 'coords', $(n \times 2)$ vector containing the exact coordinates (in mm) of each node. (float64)
-- 'elem',   $(E \times 3)$ vector providing indices of nodes for each triangular element. $E$ is the total number of elements.  (uint16)
-- 'bound_nodes', $(B \times 1)$ vector containing indices of all boundary nodes. $B$ is total number of boundary nodes (uint16)
-- 'qvec',       $(nI \times 1)$ vector describing the illumination intensity each node receives (i.e., for boundary illumination only the (boundary) node indices that are illuminated are non zero. Repeated for each illumination $I$.  (float64)
+Basic (.pkl file) form of the geometric file that can be directly used contains fields (suggested datatypes that have verified to work):
+- 'xsize',     number of vertical nodes                              (int)
+- 'ysize',      number of horizontal nodes                            (int)
+- 'coords', $(n \times 2)$ vector containing the exact coordinates (in mm) of each node. (NumPy array)
+- 'elem',   $(E \times 3)$ vector providing indices of nodes for each triangular element. $E$ is the total number of elements.  (int)
+- 'bound_nodes', $(B \times 2)$ vector containing indices of boundary nodes for each boundary element (total of $B$) (NumPy int array)
+- 'qvec',       $(nI \times w)$ vector describing the illumination intensity each node receives (i.e., for boundary illumination only the (boundary) node indices that are illuminated are non zero. Repeated for each illumination $I$.  (NumPy array)
 
- Find the exemplar geom files from `/Learned_QPAT_multi_illumination/geom_files/` and `/Learned_QPAT_multi_frequency/geom_files/`.
+ Find the exemplar geom files from `/Learned_QPAT_multi_illumination/geom_files/` and `/Learned_QPAT_multi_frequency/geom_files/`. 
+ 
+**Data file (Absorbed energy density)** <br />
+Multi illumination: $(S \times nI)$ vector where $S$ is the number of samples and $I$ number of illuminations. <br />
+Multi wavelenght:  $(S \times nI)$ vector where $S$ is the number of samples and $I$ number of illuminations. <br />
 
+**Optical coefficients** <br />
+Multi illumination: $(S \times 2 \times n)$ vector where $S$ is the number of samples. 
 
+The first index of second dimension contains the absorption and second reduced scattering  <br />
 
+The current file format for data and coefficients is .pt 
 
 
 
