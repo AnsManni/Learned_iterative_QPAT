@@ -126,23 +126,18 @@ Basic (.pkl file) form of the geometric file that can be directly used contains 
 - 'elem',   $(E \times 3)$ vector providing indices of nodes for each triangular element. $E$ is the total number of elements.  (int)
 - 'bound_nodes', $(B \times 2)$ vector containing indices of boundary nodes for each boundary element (total of $B$) (NumPy int array)
 - 'qvec',       $(nI \times w)$ vector describing the illumination intensity each node receives (i.e., for boundary illumination only the (boundary) node indices that are illuminated are non zero. Repeated for each illumination $I$.  (NumPy array)
-- 'cropped_indices' vector containing the nodes that are in the FE mesh if not using full rectangle (only for multi wavelength problem).
+- 'cropped_indices' vector containing the nodes that are in the FE mesh if not using full rectangle (only for multi frequency problem).
 
  Find the exemplar geom files from `/Learned_QPAT_multi_illumination/geom_files/` and `/Learned_QPAT_multi_frequency/geom_files/`. 
  
 **Data file (Absorbed energy density)** <br />
 Multi illumination: $(S \times nI)$ vector where $S$ is the number of samples and $I$ number of illuminations. <br />
-Multi wavelenght:  $(S \times F \times n)$ vector where $S$ is the number of samples and $F$ number of frequencies used. <br />
+Multi frequency:  $(S \times F \times n)$ vector where $S$ is the number of samples and $F$ number of frequencies used. <br />
 
 **Optical coefficients** <br />
-Multi illumination: $(S \times 2 \times n)$ vector where $S$ is the number of samples. 
+Multi illumination: $(S \times 2 \times n)$ vector where $S$ is the number of samples. The second dimension contains, [0] absorption and [1] reduced scattering. 
 
-The first index of second dimension contains the absorption and second reduced scattering  <br />
-
-The current file format for data and coefficients is .pt 
-
-
-
-
-
+Multi frequency: $(5 \times S \times F \times n)$ vector where $S$ is the number of samples and $F$ number of used frequencies. <br />
+The first index has now 5 indices containing, [0] absorption, [1] reduced scattering, [2] segmentation indicating non-water nodes, [3] initial absorption, [4] initial reduced scattering.
+ 
 
