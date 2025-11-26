@@ -250,20 +250,23 @@ def training(trainSet,testSet,geom,experimentName,filePath,
 
         new_input_test,loss_test = Qutil.Evaluate_set_EtoE(testSet,xsize,ysize,test_samples,
                     model,geom_torch,cropped_indices,current_input_test,sample_info_test,new_input_test,mus_weight,device)
-
+    if solver == 0:
+        str_solver =  "GD"  
+    elif solver == 1:
+        str_solver =  "GN" 
+        
     if geom['visualize'] == True:
         vis_recos = torch.reshape(new_input[0:2,0,0],(1,2,xsize,ysize)).cpu().numpy()
         vis_true = torch.reshape(geom["orig_images_train"][0:2,0,0],(1,2,xsize,ysize)).cpu().numpy()
-        name = "example_images/train_reco_greedy_"+str_solver+"_"+str(lgsit)+".png"
+        name = "example_images/train_reco_greedy_"+str_solver+"_"+str(LGSiter)+".png"
         Qutil.Visualize_samples(vis_true,name,'Ground truth',mus_weight)
         Qutil.Visualize_samples(vis_recos,name,'Estimates')
 
         vis_recos = torch.reshape(new_input_test[0:2,0,0],(1,2,xsize,ysize)).cpu().numpy()
         vis_true = torch.reshape(geom["orig_images_test"][0:2,0,0],(1,2,xsize,ysize)).cpu().numpy()
-        name = "example_images/test_reco_greedy_"+str_solver+"_"+str(lgsit)+".png"
+        name = "example_images/test_reco_greedy_"+str_solver+"_"+str(LGSiter)+".png"
         Qutil.Visualize_samples(vis_true,name,'Ground truth',mus_weight)
         Qutil.Visualize_samples(vis_recos,name,'Estimates')
-    
     
     if solver == 0:
         reco_folder = "reconstructions/EtoE_GD/"
@@ -288,6 +291,7 @@ def training(trainSet,testSet,geom,experimentName,filePath,
 
         
     return 0
+
 
 
 
