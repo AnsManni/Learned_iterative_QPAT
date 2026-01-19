@@ -1,5 +1,5 @@
 
-''' Utility functions for Learned image recontruction 
+''' Initiate training 
 # Written 2025 by Anssi Manninen, University of Oulu '''
 
 import QPAT_util_multifreq as Qutil
@@ -269,6 +269,7 @@ else:
     useTensorboard = useTensorboard,
     lValInit = lValInit,
     device=device)
+
 
 
 
