@@ -17,10 +17,10 @@ project_name = "digital_twin_QPAT"
 filePath          = 'TrainedOpticalNets/'   # Where to save the networks
 geomPath          = 'geom_files/'           # geometric files
 # Coefficients
-setname_test_coeffs = "train_sets/coeffs/experimental_test_set_coeffs_nodes_5184_samples_21.pt" 
-setname_train_coeffs = "train_sets/coeffs/experimental_train_set_coeffs_nodes_5184_samples_21.pt" 
+setname_test_coeffs = "train_sets_multi_frequency/coeffs/experimental_test_set_coeffs_nodes_5184_samples_21.pt" 
+setname_train_coeffs = "train_sets_multi_frequency/coeffs/experimental_train_set_coeffs_nodes_5184_samples_21.pt" 
 # Datasets
-setname_train_data = "train_sets/data/experimental_train_set_data_nodes_5184_samples_21.pt" 
+setname_train_data = "train_sets_multi_frequency/data/experimental_train_set_data_nodes_5184_samples_21.pt" 
 setname_test_data = "train_sets/data/experimental_test_set_data_nodes_5184_samples_21.pt" 
 
 
@@ -269,6 +269,7 @@ else:
     useTensorboard = useTensorboard,
     lValInit = lValInit,
     device=device)
+
 
 
 
