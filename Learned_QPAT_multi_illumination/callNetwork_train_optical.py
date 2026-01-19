@@ -81,15 +81,15 @@ ysize = geom['ysize']
 
 # Load data and ground truth
 
-sample_file = "train_sets/images/ValoMC_limited_view_large_images_samples_1250.mat"
+sample_file = "train_sets_multi_illumination/images/ValoMC_limited_view_large_images_samples_1250.mat"
 images = sio.loadmat(sample_file)['images']
 
-data_file = "train_sets/data/ValoMC_limited_view_noisy_large_dataset_samples_1250.mat"
+data_file = "train_sets_multi_illuminatio/data/ValoMC_limited_view_noisy_large_dataset_samples_1250.mat"
 data = sio.loadmat(data_file)['train_data']
 
 # Interpolate / load interpolated set
 if interpolate_data == True:
-   setname = 'train_sets/interpolated_sets/intp_set_2520.pt'
+   setname = 'train_sets_multi_illumination/interpolated_sets/intp_set_2520.pt'
    data,images = Qutil.Interpolate_optical(data,images[:,0,:],images[:,1,:],geom,geom_orig['coords'],setname)      
    
 
@@ -256,6 +256,7 @@ else:
          lValInit = lValInit)
        
     
+
 
 
 
